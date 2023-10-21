@@ -5,4 +5,4 @@ const schema = new Schema({
     cursUsd: {type: Number, required: true},
 });
 
-module.exports = model('Admin', schema);
+module.exports = model('Management', schema);
