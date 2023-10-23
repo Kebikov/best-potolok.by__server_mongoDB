@@ -6,13 +6,19 @@ const Management = require('../models/Management');
 
 
 //= router.get('/management')
-router.get('/management', auth('Admin'), async (req, res) => {
+router.get('/management', async (req, res) => {
     try {
-        const management = await Management.find(); 
-        console.log(management);
-        if(!management[0]) return res.status(200).json( {error: {message: 'OBJECT_NOT_FOUND'}} );
+        const management = await Management.find();   
 
-        return res.status(200).send(management);
+        if(!management[0]) return res.status(200).json( {error: {message: 'OBJECT_NOT_FOUND'}} );
+        management[0].cursUsd = management[0].cursUsd + '';
+        return res.status(200).send(management[0]);
+        // management[0] = { 
+        //     _id: object,
+        //     isShowBaner: boolean, 
+        //     cursUsd: string,
+        //     __v: 0
+        //   }
     }catch (error) {
         res.status(500).json({message: `Ошибка сервера, попробуйте позже...${err}`});
     }

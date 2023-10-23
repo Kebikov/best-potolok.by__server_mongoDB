@@ -37,29 +37,6 @@ router.post('/login-admin', async (req, res) => {
     }
 });
 
-// //= проверка token ? 
-// router.post('/access-token-check', async (req, res) => {
-//     try {
-
-//         const body = req.body;
-//         // body = {
-//         //     accessToken: 'some_token',
-//         //     id: 'user_id'
-//         // }
-
-//         const isMatch = TokenService.validateAccessToken(body.accessToken);
-
-//         console.log(isMatch);
-//         if(isMatch && isMatch._id === body.id) {
-
-//         }
-
-//         return res.status(200).json({msg: 'ok'});
-
-//     }catch (error) {
-//         res.status(500).json({message: `Ошибка сервера, попробуйте позже...${err}`});
-//     }
-// });
 
 //= обновление токена 
 router.patch('/refresh-token-check', async (req, res) => {

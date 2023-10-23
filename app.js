@@ -2,7 +2,7 @@ const express =require('express');
 const mongoose = require('mongoose');
 const chalk = require('chalk');
 const cors = require('cors');
-const routes = require('./routes');
+const routes = require('./routes'); 
 require('dotenv').config();
 
 console.log(chalk.bgBlue.bold(' START '));
