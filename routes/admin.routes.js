@@ -12,6 +12,7 @@ router.get('/management', async (req, res) => {
 
         if(!management[0]) return res.status(200).json( {error: {message: 'OBJECT_NOT_FOUND'}} );
         management[0].cursUsd = management[0].cursUsd + '';
+
         return res.status(200).send(management[0]);
         // management[0] = { 
         //     _id: object,
@@ -27,7 +28,6 @@ router.get('/management', async (req, res) => {
 
 //= router.post('/management')
 router.post('/management', auth('Admin'), async (req, res) => {
-
     console.log(chalk.red('/management'));
 
     try {
@@ -48,7 +48,7 @@ router.post('/management', auth('Admin'), async (req, res) => {
                 management[0].cursUsd = body.cursUsd;
 
                 const newManagement = await management[0].save(); 
-                console.log(newManagement);
+                
                 return res.status(200).json( {server: {message: 'OBJECT_UPDATE'}} );
             }
 

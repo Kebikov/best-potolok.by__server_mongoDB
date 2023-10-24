@@ -9,28 +9,25 @@ const auth = (access) => {
         }
 
         try{
-            console.log(chalk.red('auth'));
+            console.log(chalk.red('auth'));//: log 
 
             const token = req.headers.authorization;
-            
+
             if(!token) {
-                console.log(chalk.bgCyanBright('!token'));
-                return res.status(401).json( {error: {message: 'ACCESS_DENIED'}} );
+                return res.status(401).json( {error: {message: 'ACCESS_DENIED_NOT_TOKEN'}} ); 
             }
 
             const dataToken = TokenService.validateAccessToken(token);
-            
-            if(dataToken.access === access) {
-                console.log(chalk.bgCyanBright('NEXT')); 
+
+            if(dataToken && dataToken.access === access) {
                 res.user = dataToken;
                 return next(); 
             }else{
-                console.log(chalk.bgCyanBright('NEXT_ERROR'));
                 return res.status(401).json( {error: {message: 'ACCESS_DENIED'}} ); 
             }
-
+            
         }catch(error){
-            return res.status(401).json( {error: {message: 'ACCESS_DENIED'}} );
+            return res.status(401).json( {error: {message: 'ACCESS_DENIED_CATCH'}} );
         }
     }
     
