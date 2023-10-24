@@ -27,7 +27,7 @@ router.post('/telegram', async (req, res) => {
             return res.status(200).send( {error: {message: 'NOT_INFO'}} );
         }
 
-    }catch (error) {
+    }catch (err) {
         res.status(500).json({message: `Ошибка сервера, попробуйте позже...${err}`}); 
     }
 });

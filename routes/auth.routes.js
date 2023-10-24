@@ -32,7 +32,7 @@ router.post('/login-admin', async (req, res) => {
             return res.status(400).send({ error: { message: 'NOT_ALL_DATA_SENT' } });
         }
 
-    }catch (error) {
+    }catch (err) {
         res.status(500).json({message: `Ошибка сервера, попробуйте позже...${err}`});
     }
 });
@@ -59,7 +59,7 @@ router.patch('/refresh-token-check', async (req, res) => {
             return res.status(400).json( {error: {message: 'REFRESH_TOKEN_IS_BED'}} );
         }
 
-    }catch (error) { 
+    }catch (err) { 
         res.status(500).json({message: `Ошибка сервера, попробуйте позже...${err}`});
     }
 });

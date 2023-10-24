@@ -4,6 +4,13 @@ const chalk = require('chalk');
 const auth = require('../middleware/auth.middleware');
 const Management = require('../models/Management');
 
+router.get('/test', async (req, res) => {
+    try {
+        res.send(JSON.stringify({res: 'Привет от Админа !'}));
+    }catch (error) {
+        console.log('Error in Function  >>> ', error);
+    }
+});
 
 //= router.get('/management')
 router.get('/management', async (req, res) => {
@@ -20,7 +27,7 @@ router.get('/management', async (req, res) => {
         //     cursUsd: string,
         //     __v: 0
         //   }
-    }catch (error) {
+    }catch (err) {
         res.status(500).json({message: `Ошибка сервера, попробуйте позже...${err}`});
     }
 });
@@ -56,7 +63,7 @@ router.post('/management', auth('Admin'), async (req, res) => {
             return res.status(400).json( {error: {message: 'DATA_IS_NOT_VALID'}} );
         }
 
-    }catch (error) {
+    }catch (err) {
         res.status(500).json({message: `Ошибка сервера, попробуйте позже...${err}`}); 
     }
 });
