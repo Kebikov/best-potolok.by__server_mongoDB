@@ -24,6 +24,8 @@
 ## 🛠 Used stack:
 ![mongodb](https://img.shields.io/badge/mongodb-%2355AD47?style=for-the-badge&logo=mongodb&logoColor=%23fff)
 ![node.js](https://img.shields.io/badge/node.js-%238FC708?style=for-the-badge&logo=node.js&logoColor=%23fff)
+![mongoose](https://img.shields.io/badge/mongoose-%23880000?style=for-the-badge&logo=mongoose&logoColor=%23fff)
+![express](https://img.shields.io/badge/express-%23000000?style=for-the-badge&logo=express&logoColor=%23fff)
 ---
 ## 📞 Connect with me:
 [![instagram](https://img.shields.io/badge/instagram-%23e621d6?style=for-the-badge&logo=instagram&logoColor=%23fff)](https://www.instagram.com/kebikov/)
